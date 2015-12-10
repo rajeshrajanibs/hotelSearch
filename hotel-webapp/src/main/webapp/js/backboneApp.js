@@ -14,16 +14,6 @@ var BackModel = Backbone.Model.extend({
 	url: '/createSolution'
 })
 
-var BackCollection = Backbone.Collection.extend({
-	initialize: function(){				
-		console.log("Collection Initialized");		
-	},
-	url: '/list',
-	parse: function(data) {
-		return data;
-	}
-})
-
 var AddUserView = Backbone.View.extend({
 	initialize: function(){
 		console.log("Add User View Initialized");		
@@ -34,12 +24,12 @@ var AddUserView = Backbone.View.extend({
 	},	
 	submitMe: function(e) {
 		
-		var originStation = $("#originStation").val(), 
-		    destinationStation = $("#destinationStation").val(),
-		    trainNumber = $("#trainNumber").val()
-		    totalCost = $("#totalCost").val();
-		var userModel = new BackModel({originStation: originStation, destinationStation: destinationStation,
-						trainNumber: trainNumber, totalCost: totalCost});
+		var city = $("#city").val(),
+		    checkin = $("#checkin").val(),
+		    checkout = $("#checkout").val(),
+		    guest = $("#checkout").val()
+		var userModel = new BackModel({city: city, checkin: checkin,
+						checkout: checkout, totalCost: totalCost});
 
 		var self = this;
 		userModel.fetch({
@@ -55,25 +45,4 @@ var AddUserView = Backbone.View.extend({
 		e.preventDefault();		
 	}
 })
-
-var BackView = Backbone.View.extend({	
-	template: Handlebars.compile($("#backTemplate").html()),
-        events: {
-		'click img.deleteUser' : 'deleteUser'
-	},
-	initialize: function(){				
-		console.log("List View Initialized");
-		this.listenTo(this.collection, 'add', this.render);
-		this.listenTo(this.collection, 'sync', this.render);
-		this.collection.fetch();
-	},
-	render: function(){
-		this.$el.html(this.template({solutions: this.collection.toJSON()}))
-	},
-	deleteUser: function(e) {		
-		e.preventDefault();	
-	}
-})
-
-
 

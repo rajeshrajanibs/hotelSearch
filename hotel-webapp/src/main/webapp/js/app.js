@@ -1,8 +1,6 @@
 $(function(){	
 		
-	var collection = new BackCollection();	
-	var addUser = new AddUserView({collection: collection});
-	var view = new BackView({el: "#content", collection: collection});
+	var addUser = new AddUserView();
 
 	$(".datepicker").datepicker();
 })

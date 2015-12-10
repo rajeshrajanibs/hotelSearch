@@ -30,45 +30,68 @@
     <![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Rail Application</a>
-            </div>
-            <div id="navbar" class="collapse navbar-collapse">
-                <!--<ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>-->
-            </div><!--/.nav-collapse -->
+<div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Hotel Search</a>
         </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <!--<ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>-->
+        </div><!--/.nav-collapse -->
     </nav>
-
-    <div class="container">
-        <div class="containerBody">
-            <div id="userForm">
-                <form name="createUserForm" class="form-signin">
-                    <div class="formElements">
-                        <span><input type="text" name="originStation" id="originStation" class="form-control" placeholder="Origin Station"/></span>
-                        <span><input type="text" name="destinationStation" id="destinationStation" class="form-control" placeholder="Destination Station"/></span>
-                        <span><input type="text" name="leaveDate" id="leaveDate" class="form-control datepicker" placeholder="Leave Date"/></span>
-                        <span><input type="text" name="returnDate" id="returnDate" class="form-control datepicker" placeholder="Return Date"/></span>
-                        <span><input type="text" name="totalCost" id="totalCost" class="form-control" placeholder="Total Cost"/></span>
-                        <span><input type="text" name="trainNumber" id="trainNumber" class="form-control" placeholder="Train Number"/></span>
+</div>
+<div class="container">
+    <div class="containerBody">
+        <div id="userForm">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="city" class="col-sm-4 control-label">City</label>
+                    <div class="col-sm-2">
+                        <input type="text" name="city" id="city" class="form-control" placeholder="City"/>
                     </div>
-                    <div class="submitButton"><button class="btn btn-primary btn-block submitButton" type="submit">Search</button></div>
-                </form>
-            </div>
-            <div id="content"></div>
+                </div>
+                <div class="form-group">
+                    <label for="checkin" class="col-sm-4 control-label">Check In</label>
+                    <div class="col-sm-2">
+                        <input type="text" name="checkin" id="checkin" class="form-control datepicker" placeholder="Check In"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="checkout" class="col-sm-4 control-label">Check Out</label>
+                    <div class="col-sm-2">
+                        <input type="text" name="checkout" id="checkout" class="form-control datepicker" placeholder="Check Out"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="guest" class="col-sm-4 control-label">Guests</label>
+                    <div class="col-sm-2">
+                        <select name="guest" id="guest" class="col-sm-2 form-control">
+                            <c:forEach var="i" begin="1" end="4">
+                                <option value="${i}" >${i}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-2">
+                        <button class="btn btn-primary btn-block submitButton" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div><!-- /.container -->
+        <div id="content"></div>
+    </div>
+</div><!-- /.container -->
 </body>
 </html>
 <!-- Bootstrap core JavaScript
