@@ -5,7 +5,7 @@
     <groupId>com.egencia.hotel</groupId>
     <artifactId>hotelsearch</artifactId>
     <version>0.1.0</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <repositories>
         <repository>
@@ -22,6 +22,13 @@
             <url>http://repository.prod.orbitz.net/repo</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <modules>
+	<module>hotel-review</module>
+	<module>hotel-search</module>
+	<module>hotel-smartfill</module>
+	<module>hotel-webapp</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
