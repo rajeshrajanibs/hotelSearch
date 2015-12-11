@@ -1,8 +1,8 @@
 package com.egencia.hotel.controllers;
 
 import com.egencia.hotel.models.ReviewMB;
-import com.egencia.hotel.repository.HotelReviewConnectionConfig;
-import org.json.JSONArray;
+import com.egencia.hotel.repository.HotelSearchConnectionConfig;
+import com.egencia.hotel.services.HotelReviewService;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.context.ApplicationContext;
@@ -15,15 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.inject.Inject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
+
+
 
 @RestController
 public class HotelReviewController{
+
+    @Inject
+    HotelReviewService hotelReviewService;
 
     @RequestMapping(value = "/getReview",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<ReviewMB>> getHotelReviewData() throws JSONException {
@@ -59,32 +64,26 @@ public class HotelReviewController{
 
     private List<ReviewMB> getReviewComments(String reviewData, String hotelId) throws JSONException {
         JSONObject obj = new JSONObject(reviewData);
-        ApplicationContext applicationContext =new AnnotationConfigApplicationContext(HotelReviewConnectionConfig.class);
+        ApplicationContext applicationContext =new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);
         MongoOperations mongoOperations = (MongoOperations) applicationContext.getBean("mongoTemplate");
-        JSONObject reviewDetails = obj.getJSONObject("reviewDetails");
-        JSONObject reviewCollection = reviewDetails.getJSONObject("reviewCollection");
-        JSONArray review = reviewCollection.getJSONArray("review");
-        List<ReviewMB> reviewMBs = new ArrayList<ReviewMB>();
-        for(int i=0;i<review.length();i++){
-            ReviewMB reviewMB = new ReviewMB();
-            JSONObject jsonObject = review.getJSONObject(i);
-            reviewMB.setReviewText(jsonObject.getString("reviewText"));
-            reviewMB.setUserName(jsonObject.getString("userNickname"));
-            reviewMB.setReviewTitle(jsonObject.getString("title"));
-            reviewMB.setNegativeRemarks(jsonObject.getString("negativeRemarks"));
-            reviewMB.setRatingOverall(jsonObject.getInt("ratingOverall"));
-            reviewMB.setHotelId(hotelId);
-            mongoOperations.save(reviewMB);
-            reviewMBs.add(reviewMB);
-        }
-        return reviewMBs;
+        return getReviews(obj, mongoOperations, hotelId);
 
     }
 
     private List<ReviewMB> getReviewCommentsByHotelId(String hotelId){
-        ApplicationContext applicationContext =new AnnotationConfigApplicationContext(HotelReviewConnectionConfig.class);
+        ApplicationContext applicationContext =new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);
         MongoOperations mongoOperations = (MongoOperations) applicationContext.getBean("mongoTemplate");
         List<ReviewMB> reviewMBs = mongoOperations.findAll(ReviewMB.class, hotelId);
+        return reviewMBs;
+    }
+
+    private List<ReviewMB> getReviews(JSONObject obj, MongoOperations mongoOperations, String hotelId){
+        List<ReviewMB> reviewMBs  = null;
+        try {
+            reviewMBs = hotelReviewService.getReviews(obj, mongoOperations, hotelId);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return reviewMBs;
     }
 }

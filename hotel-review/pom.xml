@@ -12,4 +12,11 @@
 		<artifactId>hotelsearch</artifactId>
 		<version>0.1.0</version>
 	</parent>
+    <dependencies>
+        <dependency>
+            <groupId>com.egencia.hotel</groupId>
+            <artifactId>hotelsearch-repository</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+    </dependencies>
 </project>
