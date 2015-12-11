@@ -43,17 +43,18 @@ var SearchView = Backbone.View.extend({
         };
 		this.model.set(searchParams);
 		var self = this;
-        var options = {
-            success: function (model, response) {
-                var searchResultCollection = new SearchResultCollection(response);
-               	var searchResultView = new SearchResultView({collection: searchResultCollection});
-            },
-            error: function (model, error) {
-                alert(error);
-            }
-        };
+
         if (this.model.isValid()) {
-            this.model.fetch(searchParams, options);
+            this.model.fetch({data: JSON.stringify(this.model),
+              success: function() {
+//                var searchResultCollection = new SearchResultCollection(response);
+//                var searchResultView = new SearchResultView({collection: searchResultCollection});
+                alert("success")
+              },
+              error: function (model, error) {
+                  alert(error);
+              }
+            });
         }
 	}
 });
