@@ -9,11 +9,11 @@ import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
 /**
  * Created by anambiath on 12/10/15.
  */
-public class HotelReviewConnectionConfig {
+public class HotelSearchConnectionConfig {
 
     public @Bean
     MongoDbFactory mongoDbFactory()throws Exception{
-         return new SimpleMongoDbFactory(new MongoClient("192.168.71.98" , 27017 ),"test");
+        return new SimpleMongoDbFactory(new MongoClient("192.168.71.98" , 27017 ),"test");
     }
 
     public @Bean

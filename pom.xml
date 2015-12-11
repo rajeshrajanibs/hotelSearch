@@ -28,6 +28,7 @@
 	<module>hotel-search</module>
 	<module>hotel-smartfill</module>
 	<module>hotel-webapp</module>
+    <module>hotel-repository</module>
     </modules>
 
     <parent>
@@ -56,6 +57,11 @@
             <groupId>com.twolattes.json</groupId>
             <artifactId>json-marshaller</artifactId>
             <version>0.10</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
         </dependency>
     </dependencies>
 
