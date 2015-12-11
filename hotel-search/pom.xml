@@ -12,5 +12,11 @@
 		<artifactId>hotelsearch</artifactId>
 		<version>0.1.0</version>
 	</parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
