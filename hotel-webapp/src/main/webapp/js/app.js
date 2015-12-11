@@ -1,6 +1,6 @@
 $(function(){	
 		
-	var addUser = new AddUserView();
+	var searchView = new SearchView();
 
 	$(".datepicker").datepicker();
 })

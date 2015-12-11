@@ -50,79 +50,26 @@
         </div><!--/.nav-collapse -->
     </nav>
 </div>
-<div class="container">
-    <div class="containerBody">
-        <div id="userForm">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="city" class="col-sm-4 control-label">City</label>
-                    <div class="col-sm-2">
-                        <input type="text" name="city" id="city" class="form-control" placeholder="City"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="checkin" class="col-sm-4 control-label">Check In</label>
-                    <div class="col-sm-2">
-                        <input type="text" name="checkin" id="checkin" class="form-control datepicker" placeholder="Check In"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="checkout" class="col-sm-4 control-label">Check Out</label>
-                    <div class="col-sm-2">
-                        <input type="text" name="checkout" id="checkout" class="form-control datepicker" placeholder="Check Out"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="guest" class="col-sm-4 control-label">Guests</label>
-                    <div class="col-sm-2">
-                        <select name="guest" id="guest" class="col-sm-2 form-control">
-                            <c:forEach var="i" begin="1" end="4">
-                                <option value="${i}" >${i}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-2">
-                        <button class="btn btn-primary btn-block submitButton" type="submit">Search</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="content"></div>
-    </div>
-</div><!-- /.container -->
+<section id="body">
+</section>
+
 </body>
 </html>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js" type="text/javascript"></script>
-<script type="text/template" id="backTemplate">
-    <table class="table table-striped">
-        <tr>
-            <th>Id</th>
-            <th>Train Number</th>
-            <th>Origin Station</th>
-            <th>Destination Station</th>
-            <th>Total Cost</th>
-        </tr>
-        {{#each solutions}}
-        <tr>
-            <td>{{plusOne @index}}</td>
-            <td>{{this.trainNumber}}</td>
-            <td>{{this.originStation}}</td>
-            <td>{{this.destinationStation}}</td>
-            <td>{{this.totalCost}}</td>
-        </tr>
-        {{/each}}
-    </table>
-</script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/handlebars.min.js" type="text/javascript"></script>
+<script src="js/underscore.js" type="text/javascript"></script>
+<script src="js/backbone-min.js" type="text/javascript"></script>
+<script src="js/backbone.crossdomain.js" type="text/javascript"></script>
+
+<%@include file="searchForm.jsp" %>
+<%@include file="searchResult.jsp" %>
+
+
 <script src="js/handlebar_helper.js" type="text/javascript"></script>
 <script src="js/backboneApp.js" type="text/javascript"></script>
 <script src="js/app.js" type="text/javascript"></script>
