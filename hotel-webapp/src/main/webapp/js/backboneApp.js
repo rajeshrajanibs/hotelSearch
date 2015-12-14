@@ -44,21 +44,19 @@ var SearchView = Backbone.View.extend({
 		this.model.set(searchParams);
 		var self = this;
 
-//        if (this.model.isValid()) {
+        if (this.model.isValid()) {
             $("#submitBut").hide()
             $("#spinner").html("<img src='/img/loading.gif'>")
             this.model.fetch({data: JSON.stringify(this.model),
               success: function(model, response) {
                   self.collection.add(response)
-//                var searchResultCollection = new SearchResultCollection(response);
-//                this.collection.add(response)
               },
               error: function (model, error) {
                   $("#submitBut").show()
                   $("#spinner").hide()
               }
             });
-//        }
+        }
 	}
 });
 
