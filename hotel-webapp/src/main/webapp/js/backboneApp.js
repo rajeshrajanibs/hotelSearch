@@ -44,22 +44,25 @@ var SearchView = Backbone.View.extend({
 		this.model.set(searchParams);
 		var self = this;
 
-        if (this.model.isValid()) {
+//        if (this.model.isValid()) {
+            $("#submitBut").hide()
+            $("#spinner").html("<img src='/img/loading.gif'>")
             this.model.fetch({data: JSON.stringify(this.model),
-              success: function() {
+              success: function(model, response) {
+                  self.collection.add(response)
 //                var searchResultCollection = new SearchResultCollection(response);
-//                var searchResultView = new SearchResultView({collection: searchResultCollection});
-                alert("success")
+//                this.collection.add(response)
               },
               error: function (model, error) {
-                  alert(error);
+                  $("#submitBut").show()
+                  $("#spinner").hide()
               }
             });
-        }
+//        }
 	}
 });
 
-var SearchResultCollection = Backbone.View.extend({
+var SearchResultCollection = Backbone.Collection.extend({
     url: "",
     parse: function(data) {
         return data;
@@ -70,7 +73,7 @@ var SearchResultView = Backbone.View.extend({
     el: "#body",
 	template: Handlebars.compile($("#searchResult").html()),
 	initialize: function(){
-		this.render()
+        this.listenTo(this.collection, 'add', this.render);
 	},
 	render: function(){
 		this.$el.html(this.template({searchResults: this.collection.toJSON()}))

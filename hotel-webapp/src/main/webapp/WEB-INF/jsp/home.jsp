@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Hotel Search</a>
+            <a id="hotelSearch" class="navbar-brand" href="/">Hotel Search</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <!--<ul class="nav navbar-nav">

@@ -31,8 +31,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-offset-4 col-sm-2">
-                        <button class="btn btn-primary btn-block submitButton" type="submit">Search</button>
+                    <div class="col-sm-offset-4 col-sm-2" >
+                        <button id="submitBut" class="btn btn-primary btn-block submitButton" type="submit">Search</button>
+                        <div id="spinner"></div>
                     </div>
                 </div>
             </form>
