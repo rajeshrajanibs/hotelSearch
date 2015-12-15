@@ -21,7 +21,7 @@ public class HotelReviewServiceImpl implements HotelReviewService {
     HotelReviewDao hotelReviewDao;
 
     @Override
-    public List<ReviewMB> getReviews(JSONObject obj, MongoOperations mongoOperations, String hotelId) throws JSONException {
-              return hotelReviewDao.saveReviews(obj, mongoOperations, hotelId);
+    public List<ReviewMB> getReviews(JSONObject obj, String hotelId) throws JSONException {
+              return hotelReviewDao.getReviews(obj,  hotelId);
     }
 }

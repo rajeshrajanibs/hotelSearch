@@ -13,5 +13,5 @@ import java.util.List;
 
 public interface HotelReviewDao {
 
-    public List<ReviewMB> saveReviews(JSONObject obj, MongoOperations mongoOperations, String hotelId)throws JSONException;
+    public List<ReviewMB> getReviews(JSONObject obj, String hotelId)throws JSONException;
 }

@@ -1,10 +1,12 @@
 package com.egencia.hotel.models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Created by anambiath on 12/10/15.
  */
+@Document(collection="reviews")
 public class ReviewMB {
 
     @Id
@@ -15,6 +17,20 @@ public class ReviewMB {
     private String reviewTitle;
     private int ratingOverall;
     private String negativeRemarks;
+
+    public ReviewMB() {
+
+    }
+
+    public ReviewMB(String hotelId, String reviewText, String userName, String reviewTitle,
+                    int ratingOverall, String negativeRemarks) {
+        this.hotelId = hotelId;
+        this.reviewText = reviewText;
+        this.userName = userName;
+        this.reviewTitle = reviewTitle;
+        this.ratingOverall = ratingOverall;
+        this.negativeRemarks = negativeRemarks;
+    }
 
     public String getId() {
         return Id;
