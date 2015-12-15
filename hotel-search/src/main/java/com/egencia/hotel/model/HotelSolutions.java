@@ -11,6 +11,8 @@ public class HotelSolutions {
     private Stay stay;
     private List<HotelSolution> hotelsolutions;
 
+    private String regionId;
+
     public int getHotelCount() {
         return hotelCount;
     }
@@ -34,4 +36,14 @@ public class HotelSolutions {
     public void setHotelsolutions(List<HotelSolution> hotelsolutions) {
         this.hotelsolutions = hotelsolutions;
     }
+
+    public String getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(String regionId) {
+        this.regionId = regionId;
+    }
+
+
 }

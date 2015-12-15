@@ -1,5 +1,8 @@
 package com.egencia.hotel.model;
 
+
+import java.util.List;
+
 /**
  * Created by jkurian on 12/10/15.
  */
@@ -14,6 +17,8 @@ public class HotelSolution {
     private String starRating;
     private String thumbnailUrl;
     private Amenities amenities;
+    private List<RoomType> roomTypes;
+
 
     public int getHotelID() {
         return hotelID;
@@ -86,4 +91,13 @@ public class HotelSolution {
     public void setAmenities(Amenities amenities) {
         this.amenities = amenities;
     }
+
+    public List<RoomType> getRoomTypes() {
+        return roomTypes;
+    }
+
+    public void setRoomTypes(List<RoomType> roomTypes) {
+        this.roomTypes = roomTypes;
+    }
+
 }

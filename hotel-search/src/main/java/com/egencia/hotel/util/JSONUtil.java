@@ -1,6 +1,7 @@
 package com.egencia.hotel.util;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -15,6 +16,7 @@ public class JSONUtil {
         JsonNode jsonObj = null;
         try {
             ObjectMapper mapper = new ObjectMapper();
+            mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
             jsonObj = mapper.readTree(jsonString);
         }catch(JsonParseException e) {
             System.out.println("Exception in parseJSON "+ e);
