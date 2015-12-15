@@ -5,7 +5,8 @@
                 <div class="form-group">
                     <label for="city" class="col-sm-4 control-label">City</label>
                     <div class="col-sm-2">
-                        <input type="text" name="city" id="city" class="form-control" placeholder="City"/>
+                        <input type="text" name="city" id="cityAutoComplete"  autocomplete="off"  class="form-control" placeholder="City"/>
+                        <input type="hidden" name="cityCode" id="cityCode"/>
                     </div>
                 </div>
                 <div class="form-group">

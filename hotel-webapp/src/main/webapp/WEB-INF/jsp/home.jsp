@@ -16,8 +16,9 @@
     <title>Rail Application</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap-datepicker.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
     <link href="css/application.css" rel="stylesheet"/>
 
@@ -27,7 +28,7 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 <body>
 <div class="container">
@@ -51,20 +52,22 @@
     </nav>
 </div>
 <section id="body">
-</section>
 
+</section>
 </body>
 </html>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.min.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
 <script src="js/handlebars.min.js" type="text/javascript"></script>
 <script src="js/underscore.js" type="text/javascript"></script>
 <script src="js/backbone-min.js" type="text/javascript"></script>
 <script src="js/backbone.crossdomain.js" type="text/javascript"></script>
+
 
 <%@include file="searchForm.jsp" %>
 <%@include file="searchResult.jsp" %>

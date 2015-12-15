@@ -25,10 +25,10 @@ var SearchView = Backbone.View.extend({
     template: Handlebars.compile($("#searchTemplate").html()),
 	initialize: function(){
 	    this.render();
-		console.log("Add User View Initialized");		
+		console.log("Add User View Initialized");
 	},
     events: {
-		'click button.submitButton' : 'submitMe'
+		'click button.submitButton' : 'submitMe',
 	},
     render: function() {
         this.$el.html(this.template())
@@ -44,7 +44,7 @@ var SearchView = Backbone.View.extend({
 		this.model.set(searchParams);
 		var self = this;
 
-        if (this.model.isValid()) {
+//        if (this.model.isValid()) {
             $("#submitBut").hide()
             $("#spinner").html("<img src='/img/loading.gif'>")
             this.model.fetch({data: JSON.stringify(this.model),
@@ -56,7 +56,7 @@ var SearchView = Backbone.View.extend({
                   $("#spinner").hide()
               }
             });
-        }
+//        }
 	}
 });
 
