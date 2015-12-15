@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
  */
 public class Search {
 
-    private String hotelIds;
+    private String regionIds;
     private String fromDate;
     private String toDate;
 
@@ -14,19 +14,19 @@ public class Search {
 
     }
 
-    public Search(String hotelIds, String fromDate, String toDate) {
-        this.hotelIds = hotelIds;
+    public Search(String regionIds, String fromDate, String toDate) {
+        this.regionIds = regionIds;
         this.fromDate = fromDate;
         this.toDate = toDate;
     }
 
 
-    public String getHotelIds() {
-        return hotelIds;
+    public String getRegionIds() {
+        return regionIds;
     }
 
-    public void setHotelIds(String hotelIds) {
-        this.hotelIds = hotelIds;
+    public void setRegionIds(String regionIds) {
+        this.regionIds = regionIds;
     }
 
     public String getFromDate() {

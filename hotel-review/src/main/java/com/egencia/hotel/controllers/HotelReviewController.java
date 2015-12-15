@@ -11,10 +11,7 @@ import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.io.BufferedReader;
@@ -24,7 +21,7 @@ import java.net.URL;
 import java.util.List;
 
 
-
+@CrossOrigin(origins = "http://192.168.71.98:8121")
 @RestController
 public class HotelReviewController{
 

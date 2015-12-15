@@ -1,5 +1,5 @@
 var SearchModel = Backbone.Model.extend({
-    url: 'http://terminal2.expedia.com/x/hotels?regionids=178279&dates=2016-05-19,2016-05-22&adults=3&childages=6,9&apikey=9jAXuI5XTCCdk7AbqtUy0jSrHfCZ07S3',
+    url: 'http://192.168.71.98:8122/searchHotels',
     initialize: function() {
        this.on("invalid",function(model,error){
            alert(error);
@@ -7,13 +7,13 @@ var SearchModel = Backbone.Model.extend({
     },
 	validate: function (attrs) {
 	    var errors = new Array();
-        if (!attrs.city) {
+        if (!attrs.regionIds) {
             return 'Please fill city field.';
         }
-        if (!attrs.checkin) {
+        if (!attrs.fromDate) {
             return 'Please fill checkin field.';
         }
-        if (!attrs.checkout) {
+        if (!attrs.toDate) {
             return 'Please fill checkout field.';
         }
     }
@@ -36,18 +36,23 @@ var SearchView = Backbone.View.extend({
 	submitMe: function(e) {
         e.preventDefault();
         var searchParams = {
-            city: this.$("#city").val(),
-            checkin:  this.$("#checkin").val(),
-            checkout: this.$("#checkout").val(),
-            guest: this.$("#guest").val()
+            regionIds: this.$("#cityCode").val(),
+            fromDate:  this.$("#checkin").val(),
+            toDate: this.$("#checkout").val()
+//            guest: this.$("#guest").val()
         };
 		this.model.set(searchParams);
 		var self = this;
-
-//        if (this.model.isValid()) {
+        console.log()
+        if (this.model.isValid()) {
             $("#submitBut").hide()
             $("#spinner").html("<img src='/img/loading.gif'>")
-            this.model.fetch({data: JSON.stringify(this.model),
+            this.model.fetch({
+              beforeSend: function (xhr) {
+                xhr.setRequestHeader('Content-Type', 'application/json');
+              },
+              data: JSON.stringify(this.model),
+              type:'POST',
               success: function(model, response) {
                   self.collection.add(response)
               },
@@ -56,7 +61,7 @@ var SearchView = Backbone.View.extend({
                   $("#spinner").hide()
               }
             });
-//        }
+        }
 	}
 });
 

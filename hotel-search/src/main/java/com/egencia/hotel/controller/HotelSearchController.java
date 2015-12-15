@@ -4,32 +4,33 @@ package com.egencia.hotel.controller;
 
 import com.egencia.hotel.model.HotelSolution;
 import com.egencia.hotel.model.HotelSolutions;
+import com.egencia.hotel.model.Search;
 import com.egencia.hotel.service.HotelSearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by jkurian on 12/10/15.
  */
-@Controller
+
+
+@RestController
 public class HotelSearchController {
 
     @Autowired
     HotelSearchService hotelSearchService;
 
-
+    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.POST)
     @RequestMapping(value = "/searchHotels", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<HotelSolutions> searchHotels(@RequestParam("regionIds") String regionIds,
-                                             @RequestParam("fromDate") String fromDate,
-                                             @RequestParam("toDate") String toDate) {
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            headers = "content-type=application/x-www-form-urlencoded")
+    public ResponseEntity<HotelSolutions> searchHotels(@RequestBody Search search) {
 
-        HotelSolutions hotelSolutions = hotelSearchService.search(regionIds,fromDate,toDate);
+        HotelSolutions hotelSolutions = hotelSearchService.search(search.getRegionIds(),search.getFromDate(), search.getToDate());
         if(hotelSolutions != null) {
             return new ResponseEntity<HotelSolutions>(hotelSolutions, HttpStatus.OK);
         } else {
