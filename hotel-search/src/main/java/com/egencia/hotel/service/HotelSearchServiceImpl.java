@@ -27,7 +27,7 @@ public class HotelSearchServiceImpl implements HotelSearchService {
 
     public HotelSolutions search(String regionIds, String frmDate, String toDate) {
 
-        String uri = "http://terminal2.expedia.com/x/hotels?regionids=" + regionIds + "&dates=" + frmDate + ","
+        String uri = "http://terminal2.expedia.com/x/hotels?regionids=178279&dates=" + frmDate + ","
                                                         + toDate + "&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
         HotelSolutions hotelSolutions = null;
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);

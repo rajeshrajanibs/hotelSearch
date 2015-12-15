@@ -24,13 +24,11 @@ public class HotelSearchController {
     @Autowired
     HotelSearchService hotelSearchService;
 
-    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.POST)
-    @RequestMapping(value = "/searchHotels", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE,
-            headers = "content-type=application/x-www-form-urlencoded")
-    public ResponseEntity<HotelSolutions> searchHotels(@RequestBody Search search) {
-
-        HotelSolutions hotelSolutions = hotelSearchService.search(search.getRegionIds(),search.getFromDate(), search.getToDate());
+    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.GET)
+    @RequestMapping(value = "/searchHotels", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<HotelSolutions> searchHotels(@RequestParam("regionIds") String regionIds, @RequestParam("fromDate") String fromDate, @RequestParam("toDate") String toDate) {
+        System.out.println("******************************"+fromDate);
+        HotelSolutions hotelSolutions = hotelSearchService.search(regionIds, fromDate, toDate);
         if(hotelSolutions != null) {
             return new ResponseEntity<HotelSolutions>(hotelSolutions, HttpStatus.OK);
         } else {
@@ -49,4 +47,5 @@ public class HotelSearchController {
         System.out.println("Hiii");
         return new ModelAndView("index");
     }
+
 }

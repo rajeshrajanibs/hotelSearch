@@ -71,6 +71,7 @@
 
 <%@include file="searchForm.jsp" %>
 <%@include file="searchResult.jsp" %>
+<%@include file="review.jsp" %>
 
 
 <script src="js/handlebar_helper.js" type="text/javascript"></script>
