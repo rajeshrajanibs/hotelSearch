@@ -2,16 +2,16 @@ package com.egencia.hotel.controller;
 
 import com.egencia.hotel.model.Solution;
 import com.egencia.hotel.validation.HotelSmartFillUtil;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -23,9 +23,10 @@ import java.util.List;
 @RestController
 public class HotelSmartFillController{
 
+    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.GET)
     @RequestMapping(value = "/getSolutions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Solution>> smartfillSolutions(){
-        String url = "http://terminal2.expedia.com/x/suggestions/hotels?query=Westin&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
+    public ResponseEntity<List<Solution>> smartfillSolutions(@RequestParam("location") String hotelLocation){
+        String url = "http://terminal2.expedia.com/x/suggestions/hotels?query="+hotelLocation+"&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
         List<Solution> solutions = null;
 
         try {
@@ -43,6 +44,7 @@ public class HotelSmartFillController{
             }
             in.close();
             System.out.println("response" + response);
+
             solutions = HotelSmartFillUtil.setSolution(response.toString());
         }
         catch(Exception e){

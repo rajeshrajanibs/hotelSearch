@@ -12,19 +12,17 @@ $("#cityAutoComplete").autocomplete(
     {
         $.ajax(
         {
-            url: "js/country.json",
-            dataType: "json",
+            url: "http://192.168.71.98:8120/getSolutions",
             data:
             {
-                term: $("#cityAutoComplete").val(),
+                location: $("#cityAutoComplete").val(),
             },
             success: function (data)
             {
                response($.map(data, function (item) {
                    return {
-                       label: item.name,
-                       value: item.name,
-                       id:   item.code,
+                       value: item.locationName,
+                       id:   item.id,
                    };
                 }));
             },

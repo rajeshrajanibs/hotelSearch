@@ -2,6 +2,7 @@ package com.egencia.hotel.validation;
 
 import com.egencia.hotel.model.Solution;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.List;
  */
 public class HotelSmartFillUtil {
 
-    public static List<Solution> setSolution(String response){
+    public static List<Solution> setSolution(String response) throws JSONException {
 
 
         List<Solution> solutions = new ArrayList<Solution>();
