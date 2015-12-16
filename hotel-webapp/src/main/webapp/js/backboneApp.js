@@ -94,6 +94,7 @@ var SearchResultView = Backbone.View.extend({
 
 
 var ReviewModel = Backbone.Model.extend({
+    url: "http://192.168.71.98:8123/getReviews",
     initialize: function(){
         console.log("Model is created");
     }
@@ -103,28 +104,38 @@ var ReviewCollection = Backbone.Collection.extend({
     initialize: function(){
         console.log("Collection initialized");
     },
-    model: ReviewModel,
-    url: "/getReviews"
+    model: ReviewModel
+
 })
 
 var ReviewView =  Backbone.View.extend({
     template: Handlebars.compile($("#reviewTemplate").html()),
 
     initialize: function(){
+        this.collection = new ReviewCollection();
         this.listenTo(this.collection,'add', this.render);
-        this.render()
+        this.reviews()
     },
 
     el: "#hotelDetails",
 
-    review: function(e){
-        e.preventDefault();
-        var reviewModel = new ReviewModel({hotelId: this.hotelId});
-        var self = this;
-        reviewModel.fetch()
+    reviews: function() {
+        var self = this
+        $("#hotelDetails").html("<img src='/img/loading.gif'>")
+        window.scrollTo(0,0)
+        this.model.fetch({data: {hotelId: this.model.get("hotelId")},
+            success: function(model, response) {
+                self.collection.add(response)
+            },
+            error: function (model, error) {
+                $("#submitBut").show()
+                $("#spinner").hide()
+            }
+
+        })
     },
     render: function(){
-       this.$el.html(this.template({hotelId : this.model.get("hotelId")}))
+       this.$el.html(this.template({reviews : this.collection.toJSON()}))
     }
 
 })

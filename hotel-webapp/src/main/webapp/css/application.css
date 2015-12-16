@@ -19,3 +19,8 @@ body {
 input.wait {
 	    background: url(/img/loading.gif) no-repeat top right;
 	}
+
+.review-name {
+    color: #1C5B00;
+    font-weight: bold;
+}

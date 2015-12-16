@@ -6,38 +6,29 @@ import org.springframework.data.mongodb.core.mapping.Document;
 /**
  * Created by anambiath on 12/10/15.
  */
-@Document(collection="reviews")
 public class ReviewMB {
 
-    @Id
-    private String Id;
     private String hotelId;
     private String reviewText;
     private String userName;
     private String reviewTitle;
     private int ratingOverall;
     private String negativeRemarks;
+    private String submissionDate;
 
     public ReviewMB() {
 
     }
 
     public ReviewMB(String hotelId, String reviewText, String userName, String reviewTitle,
-                    int ratingOverall, String negativeRemarks) {
+                    int ratingOverall, String negativeRemarks, String submissionDate) {
         this.hotelId = hotelId;
         this.reviewText = reviewText;
         this.userName = userName;
         this.reviewTitle = reviewTitle;
         this.ratingOverall = ratingOverall;
         this.negativeRemarks = negativeRemarks;
-    }
-
-    public String getId() {
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
+        this.submissionDate = submissionDate;
     }
 
     public String getHotelId() {
@@ -86,5 +77,13 @@ public class ReviewMB {
 
     public void setNegativeRemarks(String negativeRemarks) {
         this.negativeRemarks = negativeRemarks;
+    }
+
+    public String getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public void setSubmissionDate(String submissionDate) {
+        this.submissionDate = submissionDate;
     }
 }

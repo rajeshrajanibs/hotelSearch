@@ -24,7 +24,7 @@ public class HotelSearchController {
     @Autowired
     HotelSearchService hotelSearchService;
 
-    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.GET)
+    @CrossOrigin
     @RequestMapping(value = "/searchHotels", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<HotelSolutions> searchHotels(@RequestParam("regionIds") String regionIds, @RequestParam("fromDate") String fromDate, @RequestParam("toDate") String toDate) {
         System.out.println("******************************"+fromDate);
@@ -44,7 +44,6 @@ public class HotelSearchController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView newSolution() {
-        System.out.println("Hiii");
         return new ModelAndView("index");
     }
 

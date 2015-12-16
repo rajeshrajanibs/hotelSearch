@@ -2,9 +2,11 @@ $(function(){
     var searchResultCollection = new SearchResultCollection();
 	var searchView = new SearchView({collection: searchResultCollection});
     var searchResultView = new SearchResultView({collection: searchResultCollection});
-       $('.datepicker').datepicker({format: "yyyy-mm-dd"});
+       $('.datepicker').datepicker({format: "yyyy-mm-dd", startDate: new Date()});
 
-
+$('#checkout').on('changeDate', function(ev){
+    $(this).datepicker('hide');
+});
 
 $("#cityAutoComplete").autocomplete(
 {

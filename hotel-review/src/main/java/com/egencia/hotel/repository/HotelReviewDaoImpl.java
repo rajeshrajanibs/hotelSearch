@@ -19,7 +19,7 @@ public class HotelReviewDaoImpl implements HotelReviewDao{
 
 
     @Override
-    public List<ReviewMB> getReviews(JSONObject obj, String hotelId) throws JSONException {
+    public List<ReviewMB> getReviews(JSONObject obj) throws JSONException {
         JSONObject reviewDetails = obj.getJSONObject("reviewDetails");
         JSONObject reviewCollection = reviewDetails.getJSONObject("reviewCollection");
         JSONArray review = reviewCollection.getJSONArray("review");
@@ -32,7 +32,7 @@ public class HotelReviewDaoImpl implements HotelReviewDao{
             reviewMB.setReviewTitle(jsonObject.getString("title"));
             reviewMB.setNegativeRemarks(jsonObject.getString("negativeRemarks"));
             reviewMB.setRatingOverall(jsonObject.getInt("ratingOverall"));
-            reviewMB.setHotelId(hotelId);
+            reviewMB.setSubmissionDate(jsonObject.getString("reviewSubmissionTime").split("T")[0]);
             reviewMBs.add(reviewMB);
         }
         return reviewMBs;

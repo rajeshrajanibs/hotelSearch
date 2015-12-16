@@ -29,6 +29,9 @@ public class HotelSearchServiceImpl implements HotelSearchService {
 
         String uri = "http://terminal2.expedia.com/x/hotels?regionids="+regionIds+"&dates=" + frmDate + ","
                                                         + toDate + "&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
+
+//        String uri = "http://terminal2.expedia.com/x/hotels?regionids="+regionIds+"&dates=" + frmDate + ","
+//                                                        + toDate + "&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
         HotelSolutions hotelSolutions = null;
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);
         MongoOperations mongoOperations = (MongoOperations) applicationContext.getBean("mongoTemplate");
