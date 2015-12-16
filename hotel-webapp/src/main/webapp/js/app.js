@@ -35,7 +35,14 @@ $("#cityAutoComplete").autocomplete(
     select: function (event, ui)
     {
         $('#cityCode').val(ui.item.id);
-    }
+    },
+    search: function(event, ui) {
+        $(this).addClass("wait");
+    },
+    open: function(event, ui) {
+        $(this).removeClass("wait");
+    },
+
 });
 
 

@@ -15,3 +15,7 @@ body {
 .red {
     color: red;
 }
+
+input.wait {
+	    background: url(/img/loading.gif) no-repeat top right;
+	}
