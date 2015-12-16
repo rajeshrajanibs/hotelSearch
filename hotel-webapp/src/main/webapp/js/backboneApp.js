@@ -72,7 +72,8 @@ var SearchResultView = Backbone.View.extend({
     el: "#body",
 	template: Handlebars.compile($("#searchResult").html()),
 	events: {
-	    'click #review a' : 'review'
+	    'click #review a' : 'review',
+	    'click #hotelName a' : 'hotelDetals'
 
 	},
 	initialize: function(){
@@ -88,6 +89,14 @@ var SearchResultView = Backbone.View.extend({
 	    var hotelId = $(e.currentTarget).attr("hotelId");
 	    var reviewModel = new ReviewModel({hotelId: hotelId})
 	    new ReviewView({model: reviewModel});
+
+	},
+
+	hotelDetals: function(e) {
+	    e.preventDefault();
+	    var hotelSolution = $(e.currentTarget).attr("href")
+	    var detailCollection = new DetailCollection({hotelSolution: hotelSolution})
+	    new DetailView({collection: detailCollection});
 
 	}
 })
@@ -115,6 +124,43 @@ var ReviewView =  Backbone.View.extend({
         this.collection = new ReviewCollection();
         this.listenTo(this.collection,'add', this.render);
         this.reviews()
+    },
+
+    el: "#hotelDetails",
+
+    reviews: function() {
+        var self = this
+        $("#hotelDetails").html("<img src='/img/loading.gif'>")
+        window.scrollTo(0,0)
+        this.model.fetch({data: {hotelId: this.model.get("hotelId")},
+            success: function(model, response) {
+                self.collection.add(response)
+            },
+            error: function (model, error) {
+                $("#submitBut").show()
+                $("#spinner").hide()
+            }
+
+        })
+    },
+    render: function(){
+       this.$el.html(this.template({reviews : this.collection.toJSON()}))
+    }
+
+})
+
+
+var DetailCollection = Backbone.Collection.extend({
+    initialize: function(){
+        console.log("Collection initialized");
+    }
+})
+
+var DetailView =  Backbone.View.extend({
+    template: Handlebars.compile($("#reviewTemplate").html()),
+
+    initialize: function(){
+        console.log(this.collection)
     },
 
     el: "#hotelDetails",

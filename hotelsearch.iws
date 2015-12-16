@@ -2,31 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5932d99b-66d4-4675-b970-2d41fa60464b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/Validator/ReviewUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/models/TotalReviews.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotel-review/target/hotelsearch-review-0.1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotel-review/target/hotelsearch-review-0.1.0.jar.original" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotel-review/target/maven-archiver/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotel-review/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/hotel-review/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/hotelDetails.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/outputFileStates.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../railMvnApp/.gradle/1.12/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/controllers/HotelReviewController.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/controllers/HotelReviewController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/repository/HotelReviewDao.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/repository/HotelReviewDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/repository/HotelReviewDaoImpl.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/repository/HotelReviewDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/services/HotelReviewService.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/services/HotelReviewService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/services/HotelReviewServiceImpl.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/services/HotelReviewServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/controller/HotelSearchController.java" afterPath="$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/controller/HotelSearchController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/service/HotelSearchServiceImpl.java" afterPath="$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/service/HotelSearchServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/models/ReviewMB.java" afterPath="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/models/ReviewMB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/app.js" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/css/application.css" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/css/application.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/backboneApp.js" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/backboneApp.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotelsearch.iws" afterPath="$PROJECT_DIR$/hotelsearch.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/review.jsp" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/review.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchResult.jsp" afterPath="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchResult.jsp" />
     </list>
     <ignored path="hotelsearch.iws" />
@@ -227,8 +210,18 @@
       <file leaf-file-name="backboneApp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/backboneApp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1860" max-vertical-offset="2190">
-              <caret line="124" column="23" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1349" max-vertical-offset="2880">
+              <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hotelDetails.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/hotelDetails.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -257,8 +250,8 @@
       <file leaf-file-name="review.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/review.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="450">
-              <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+              <caret line="24" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -357,8 +350,8 @@
       <file leaf-file-name="searchResult.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchResult.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21301775" vertical-offset="111" max-vertical-offset="810">
-              <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.35502958" vertical-offset="0" max-vertical-offset="810">
+              <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
               <folding />
             </state>
           </provider>
@@ -397,8 +390,8 @@
       <file leaf-file-name="searchForm.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="750">
-              <caret line="6" column="42" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -512,6 +505,7 @@
         <option value="$PROJECT_DIR$/hotel-webapp/src/main/webapp/css/application.css" />
         <option value="$PROJECT_DIR$/hotel-review/src/main/java/com/egencia/hotel/repository/HotelReviewDaoImpl.java" />
         <option value="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/review.jsp" />
+        <option value="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/hotelDetails.jsp" />
         <option value="$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/backboneApp.js" />
         <option value="$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchResult.jsp" />
       </list>
@@ -1627,17 +1621,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/controller/HotelSearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="855">
-          <caret line="30" column="62" selection-start-line="30" selection-start-column="62" selection-end-line="30" selection-end-column="62" />
-          <folding>
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#1770#1771#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotel-search/src/main/java/com/egencia/hotel/repository/HotelSearchConnectionConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="345">
@@ -2307,14 +2290,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="750">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/css/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
@@ -2389,26 +2364,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/review.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <caret line="24" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/js/backboneApp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2190">
-          <caret line="124" column="23" selection-start-line="124" selection-start-column="8" selection-end-line="124" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1349" max-vertical-offset="2880">
+          <caret line="98" column="22" selection-start-line="98" selection-start-column="22" selection-end-line="98" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/hotelDetails.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hotel-webapp/src/main/webapp/WEB-INF/jsp/searchResult.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21301775" vertical-offset="111" max-vertical-offset="810">
-          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.35502958" vertical-offset="0" max-vertical-offset="810">
+          <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
           <folding />
         </state>
       </provider>

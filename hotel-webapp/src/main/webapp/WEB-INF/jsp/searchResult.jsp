@@ -14,10 +14,10 @@
                                        <img class="card-img-top" data-src="..." alt="Card image cap" src="{{thumbnailUrl}}" width="60%" height="100%">
                                    </div>
                                    <div class="col-md-6">
-                                            <h4><a href="#">{{name}}</a></h4>
-                                            <h5>{{location.streetAddress}}, {{location.city}}, {{location.country}}</h5>
-                                           <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}">Reviews</a></div>
-                                           <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
+                                        <h4 id="hotelName"><a href="#">{{name}}</a></h4>
+                                        <h5>{{location.streetAddress}}, {{location.city}}, {{location.country}}</h5>
+                                       <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}">Reviews</a></div>
+                                       <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
                                    </div>
                                    <div class="col-md-3">
                                         {{#if roomTypes}}
