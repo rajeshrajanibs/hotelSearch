@@ -16,7 +16,6 @@
                                    <div class="col-md-6">
                                         <h4 id="hotelName"><a href="#">{{name}}</a></h4>
                                         <h5 class="location-style">{{location.streetAddress}}, {{location.city}}, {{location.country}}</h5>
-                                        <h5 class="description-style">{{description}}</h5>
                                         <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}">Reviews</a></div>
                                         <div><span class="stars">{{starRating}}</span></div>
                                         <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
