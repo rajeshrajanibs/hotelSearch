@@ -23,7 +23,7 @@ import java.util.List;
 @RestController
 public class HotelSmartFillController{
 
-    @CrossOrigin(origins="http://192.168.71.98:8121", methods = RequestMethod.GET)
+    @CrossOrigin
     @RequestMapping(value = "/getSolutions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Solution>> smartfillSolutions(@RequestParam("location") String hotelLocation){
        // String url = "http://terminal2.expedia.com/x/suggestions/hotels?query="+hotelLocation+"&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";

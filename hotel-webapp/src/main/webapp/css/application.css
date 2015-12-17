@@ -1,5 +1,6 @@
 body {
-  padding-top: 70px;
+  padding-top: 55px;
+  margin: 0 15px;
 }
 .card{
     background-color: #f1f1f1;
@@ -28,4 +29,15 @@ input.wait {
 .review-title {
     color: #28D961;
     font-weight: bold;
+}
+
+span.stars, span.stars span {
+    display: block;
+    background: url(/img/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
 }

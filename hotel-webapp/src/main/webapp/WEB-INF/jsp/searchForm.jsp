@@ -5,20 +5,20 @@
                 <div class="form-group">
                     <label for="city" class="col-sm-4 control-label">City</label>
                     <div class="col-sm-2">
-                        <input type="text" name="city" id="cityAutoComplete"  autocomplete="off"  class="form-control" placeholder="City"/>
+                        <input type="text" name="city" id="cityAutoComplete"  autocomplete="off"  class="form-control" placeholder="City" />
                         <input type="hidden" name="cityCode" id="cityCode"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="checkin" class="col-sm-4 control-label">Check In</label>
                     <div class="col-sm-2">
-                        <input type="text" name="checkin" id="checkin" class="form-control datepicker" placeholder="Check In"/>
+                        <input type="text" name="checkin" id="checkin" class="form-control datepicker" placeholder="Check In" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="checkout" class="col-sm-4 control-label">Check Out</label>
                     <div class="col-sm-2">
-                        <input type="text" name="checkout" id="checkout" class="form-control datepicker" placeholder="Check Out"/>
+                        <input type="text" name="checkout" id="checkout" class="form-control datepicker" placeholder="Check Out" autocomplete="off"/>
                     </div>
                 </div>
                 <div class="form-group">

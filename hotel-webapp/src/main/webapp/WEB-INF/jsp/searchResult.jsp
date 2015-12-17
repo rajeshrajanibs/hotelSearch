@@ -1,6 +1,6 @@
 <script type="text/template" id="searchResult">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-sm-8">
             <div class="panel panel-info">
                 <div class="panel-heading">
                     <h3 class="panel-title">Hotel Search Results</h3>
@@ -16,8 +16,9 @@
                                    <div class="col-md-6">
                                         <h4 id="hotelName"><a href="#">{{name}}</a></h4>
                                         <h5>{{location.streetAddress}}, {{location.city}}, {{location.country}}</h5>
-                                       <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}">Reviews</a></div>
-                                       <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
+                                        <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}">Reviews</a></div>
+                                        <div><span class="stars">{{starRating}}</span></div>
+                                        <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
                                    </div>
                                    <div class="col-md-3">
                                         {{#if roomTypes}}
@@ -35,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-sm-4">
             <div id="spinner"></div>
             <div id="hotelDetails">
 

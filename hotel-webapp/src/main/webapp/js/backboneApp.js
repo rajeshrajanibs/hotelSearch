@@ -1,5 +1,5 @@
 var SearchModel = Backbone.Model.extend({
-    url: 'http://192.168.71.98:8122/searchHotels',
+    url: 'http://192.168.70.69:8182/searchHotels',
     initialize: function() {
        this.on("invalid",function(model,error){
            alert(error);
@@ -82,6 +82,7 @@ var SearchResultView = Backbone.View.extend({
 	render: function(){
 	    console.log(this.collection.toJSON())
 		this.$el.html(this.template({searchResults: this.collection.toJSON()}))
+		$('span.stars').stars();
 	},
 
 	review: function(e) {
@@ -103,7 +104,7 @@ var SearchResultView = Backbone.View.extend({
 
 
 var ReviewModel = Backbone.Model.extend({
-    url: "http://192.168.71.98:8123/getReviews",
+    url: "http://192.168.70.69:8184/getReviews",
     initialize: function(){
         console.log("Model is created");
     }
@@ -182,6 +183,7 @@ var DetailView =  Backbone.View.extend({
     },
     render: function(){
        this.$el.html(this.template({reviews : this.collection.toJSON()}))
+
     }
 
 })
