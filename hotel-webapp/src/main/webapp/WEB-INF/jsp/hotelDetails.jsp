@@ -12,11 +12,13 @@
             <h4 class="header">Description</h4>
                 <div>{{description}}</div><br />
                 <div><a href="{{detailsUrl}}">{{detailsUrl}}</a></div>
-            <h4 class="header">Room Types</h4>
+            {{#if roomTypes}}
+                <h4 class="header">Room Types</h4>
                 {{#each roomTypes}}
                     <div> {{description}}: {{price.baseRate.value}}  {{price.baseRate.currency}}
                     ({{#if refundable}} Refundable {{else}} Non Refundable {{/if}})</div>
                 {{/each}}
+            {{/if}}
             {{#if amenities.amenities}}
                 <h4 class="header">Amenities</h4>
                 <div>
