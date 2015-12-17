@@ -26,7 +26,6 @@ public class HotelSmartFillController{
     @CrossOrigin
     @RequestMapping(value = "/getSolutions", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Solution>> smartfillSolutions(@RequestParam("location") String hotelLocation){
-       // String url = "http://terminal2.expedia.com/x/suggestions/hotels?query="+hotelLocation+"&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
        String url = "http://terminal2.expedia.com/x/suggestions/regions?query="+hotelLocation+"&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
         List<Solution> solutions = null;
 
@@ -44,8 +43,6 @@ public class HotelSmartFillController{
                 response.append(inputLine);
             }
             in.close();
-            System.out.println("response" + response);
-
             solutions = HotelSmartFillUtil.setSolution(response.toString());
         }
         catch(Exception e){

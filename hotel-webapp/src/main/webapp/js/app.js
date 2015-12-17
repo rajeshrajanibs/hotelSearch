@@ -1,4 +1,6 @@
-$(function(){	
+var SMART_FILL_URL = "http://192.168.70.69:8183"
+
+$(function(){
     var searchResultCollection = new SearchResultCollection();
 	var searchView = new SearchView({collection: searchResultCollection});
     var searchResultView = new SearchResultView({collection: searchResultCollection});
@@ -10,13 +12,9 @@ $('#checkout').on('changeDate', function(ev){
 
 $.fn.stars = function() {
     return $(this).each(function() {
-        // Get the value
         var val = parseFloat($(this).html());
-        // Make sure that the value is in 0 - 5 range, multiply to get width
         var size = Math.max(0, (Math.min(5, val))) * 16;
-        // Create stars holder
         var $span = $('<span />').width(size);
-        // Replace the numerical value with stars
         $(this).html($span);
     });
 }
@@ -27,7 +25,7 @@ $("#cityAutoComplete").autocomplete(
     {
         $.ajax(
         {
-            url: "http://192.168.70.69:8183/getSolutions",
+            url: SMART_FILL_URL + "/getSolutions",
             data:
             {
                 location: $("#cityAutoComplete").val(),

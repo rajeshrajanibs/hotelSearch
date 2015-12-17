@@ -14,8 +14,9 @@
 	</parent>
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>com.egencia.hotel</groupId>
+            <artifactId>hotelsearch-repository</artifactId>
+            <version>0.1.0</version>
         </dependency>
     </dependencies>
     <build>

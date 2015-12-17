@@ -21,6 +21,15 @@ input.wait {
 	    background: url(/img/loading.gif) no-repeat top right;
 	}
 
+.header{
+    color: #106296;
+    font-weight: bold;
+}
+
+.bold {
+    font-weight:bold;
+}
+
 .review-name {
     color: #1C5B00;
     font-weight: bold;
@@ -43,5 +52,11 @@ span.stars span {
 }
 
 .location-style{
+    font-weight: bold;
+}
+
+#error {
+    text-align: center;
+    color: red;
     font-weight: bold;
 }

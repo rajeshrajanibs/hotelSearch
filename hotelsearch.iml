@@ -9,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/hotel-repository/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hotel-smartfill/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/hotel-search/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hotel-webapp/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

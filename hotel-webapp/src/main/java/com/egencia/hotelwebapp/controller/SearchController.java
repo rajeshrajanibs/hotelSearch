@@ -20,9 +20,7 @@ import java.util.Map;
 public class SearchController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Map<String, Object> model) {
-        model.put("time", new Date());
-        model.put("message", "Hello");
+    public String home() {
         return "home";
     }
 }

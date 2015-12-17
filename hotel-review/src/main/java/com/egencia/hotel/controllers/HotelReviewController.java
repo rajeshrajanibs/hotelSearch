@@ -32,7 +32,6 @@ public class HotelReviewController{
         TotalReviews totalReviewMB = getReviewCommentsByHotelId(hotelId);
         try {
             if(totalReviewMB == null){
-                System.out.println("Api Call **************************************************************");
                 totalReviewMB = new TotalReviews();
                 List<ReviewMB> reviewMBList = null;
                 String reviewData = hotelReviewService.getReviewsFromAPI(hotelId);

@@ -2,17 +2,20 @@ package com.egencia.hotel.service;
 
 
 import com.egencia.hotel.mapper.HotelSolutionsMapper;
+import com.egencia.hotel.model.HotelSolution;
 import com.egencia.hotel.model.HotelSolutions;
 import com.egencia.hotel.repository.HotelSearchConnectionConfig;
 import com.egencia.hotel.repository.HotelSearchDao;
 import com.egencia.hotel.util.JSONUtil;
 import com.fasterxml.jackson.databind.JsonNode;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by jkurian on 12/11/15.
@@ -20,7 +23,7 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class HotelSearchServiceImpl implements HotelSearchService {
 
-    @Autowired
+    @Inject
     HotelSearchDao hotelSearchDao;
 
     @Override
@@ -30,8 +33,6 @@ public class HotelSearchServiceImpl implements HotelSearchService {
         String uri = "http://terminal2.expedia.com/x/hotels?regionids="+regionIds+"&dates=" + frmDate + ","
                                                         + toDate + "&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
 
-//        String uri = "http://terminal2.expedia.com/x/hotels?regionids="+regionIds+"&dates=" + frmDate + ","
-//                                                        + toDate + "&apikey=ZmMw848s21a0yuvSYxU6BrDOBPnWQ3d8";
         HotelSolutions hotelSolutions = null;
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);
         MongoOperations mongoOperations = (MongoOperations) applicationContext.getBean("mongoTemplate");
@@ -56,6 +57,26 @@ public class HotelSearchServiceImpl implements HotelSearchService {
     private HotelSolutions save(HotelSolutions hotelSolutions,MongoOperations mongoOperations) {
         HotelSolutions savedHotelSolutions = hotelSearchDao.saveHotelSolutions(mongoOperations,hotelSolutions);
         return savedHotelSolutions;
+    }
+
+    public HotelSolution searchByHotelId(String regionId,String hotelId,String frmDate, String toDate) {
+
+        HotelSolutions hotelSolutions = null;
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(HotelSearchConnectionConfig.class);
+        MongoOperations mongoOperations = (MongoOperations) applicationContext.getBean("mongoTemplate");
+        hotelSolutions = hotelSearchDao.findHotelSolutions(mongoOperations,regionId,frmDate, toDate);
+        return getHotelSolution(hotelSolutions,hotelId);
+
+    }
+
+    private HotelSolution getHotelSolution(HotelSolutions hotelSolutions,String hotelId) {
+       List<HotelSolution> hotelSolutionList = hotelSolutions.getHotelsolutions();
+        for(HotelSolution hotelSolution : hotelSolutionList)  {
+           if(hotelSolution.getHotelID() == Integer.parseInt(hotelId))  {
+                  return hotelSolution;
+           }
+        }
+        return null;
     }
 
 }
