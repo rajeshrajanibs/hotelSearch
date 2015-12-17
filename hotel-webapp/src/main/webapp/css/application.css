@@ -60,3 +60,7 @@ span.stars span {
     color: red;
     font-weight: bold;
 }
+
+.rating {
+    margin: 0 0 10px;
+}

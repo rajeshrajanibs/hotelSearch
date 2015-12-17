@@ -19,8 +19,9 @@
                                    <div class="col-md-6">
                                         <h4 id="hotelName"><a href="#" hotelId="{{hotelID}}">{{name}}</a></h4>
                                         <h5 class="location-style">{{location.streetAddress}}, {{location.city}}, {{location.country}}</h5>
+                                        <div class="rating"><span class="stars">{{starRating}}</span></div>
                                         <div id="review" class='reviews"'><a href="" hotelId="{{hotelID}}" hotelName="{{name}}">Reviews</a></div>
-                                        <div><span class="stars">{{starRating}}</span></div>
+
                                         <input type="hidden" id="hoteId" name="hotelId" value="{{hotelID}}"/>
                                    </div>
                                    <div class="col-md-3">
