@@ -66,6 +66,7 @@ var SearchView = Backbone.View.extend({
               error: function (model, error) {
                   $("#submitBut").show()
                   $("#spinner").hide()
+                  $("#error").html("No Result Found")
               }
             });
         }

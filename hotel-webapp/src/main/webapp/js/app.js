@@ -6,10 +6,6 @@ $(function(){
     var searchResultView = new SearchResultView({collection: searchResultCollection});
        $('.datepicker').datepicker({format: "yyyy-mm-dd", startDate: new Date()});
 
-$('#checkout').on('changeDate', function(ev){
-    $(this).datepicker('hide');
-});
-
 $.fn.stars = function() {
     return $(this).each(function() {
         var val = parseFloat($(this).html());

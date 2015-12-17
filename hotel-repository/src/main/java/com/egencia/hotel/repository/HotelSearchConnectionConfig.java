@@ -13,7 +13,7 @@ public class HotelSearchConnectionConfig {
 
     public @Bean
     MongoDbFactory mongoDbFactory()throws Exception{
-        return new SimpleMongoDbFactory(new MongoClient("192.168.71.98" , 27017 ),"test");
+        return new SimpleMongoDbFactory(new MongoClient("localhost" , 27017 ),"test");
     }
 
     public @Bean
