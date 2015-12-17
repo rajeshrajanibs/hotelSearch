@@ -9,11 +9,17 @@
                 {{#if reviewTitle}}
                     <div class="row card">
                         <div class="col-md-3">
-                            <h4 class="review-name">{{userName}}</h4>
+                            <h5 class="review-name">
+                                {{#if userName}}
+                                    {{userName}}
+                                 {{else}}
+                                    Anonymous
+                                 {{/if}}
+                            </h5>
                             <h6>{{submissionDate}}</h6>
                         </div>
                         <div class="col-md-9">
-                            <h4>{{reviewTitle}}</h4>
+                            <h4 class="review-title">{{reviewTitle}}</h4>
                             <div>{{reviewText}}</div>
                         </div>
                     </div>
